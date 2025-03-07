@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .calculator {
+            display: inline-block;
+            padding: 20px;
+            border: 1px solid #000;
+            border-radius: 10px;
+            background-color: #eee;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            width: 200px;
+            height: 30px;
+            padding: 5px;
+            margin: 10px;
+            text-align: left;
+            font-size: 35px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: cornsilk;
+            background-color: dimgrey;
+            border-radius: 5px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 50px);
+            gap: 5px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: bisque;
+            border-radius: 10px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h2{
+            color: dimgray;
+            text-align: right;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Calculator&nbsp;&nbsp;&nbsp;</h2>
+        <input type="text" id="display">
+        <div class="buttons">
+            <button id="7">7</button>
+            <button id="8">8</button>
+            <button id="9">9</button>
+            <button id="add">+</button>
+            <button id="4">4</button>
+            <button id="5">5</button>
+            <button id="6">6</button>
+            <button id="sub">-</button>
+            <button id="1">1</button>
+            <button id="2">2</button>
+            <button id="3">3</button>
+            <button id="mul">*</button>
+            <button id="0">0</button>
+            <button id="clear">C</button>
+            <button id="cal">=</button>
+            <button id="div">/</button>
+        </div>
+    </div>
+    <script>
+        let display=document.getElementById("display");
+        let buttons=document.querySelectorAll("button");
+        let input="";
+
+        buttons.forEach(button => {
+        button.addEventListener("click", function () {
+            let value = button.innerText;
+
+            if(value=="C"){
+                input="";
+                display.value="";
+            }
+            else if(value=="="){
+                input=eval(input);
+                display.value=input;
+            }
+            else{
+                input = input+value;
+                display.value=input;
+            }
+
+        }
+        
+        )});
+
+    </script>
+</body>
+</html>
