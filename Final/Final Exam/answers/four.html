@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .b{
+         font-weight: bold;        
+        }
+        .i{
+            font-style: italic;
+        }
+        .u{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="one.html">Problem 1</a> |
+        <a href="two.html">Problem 2</a> |
+        <a href="three.html">Problem 3</a> |
+        <a href="four.html">Problem 4</a> |
+        <a href="five.html">Problem 5</a> |
+        <a href="six.html">Problem 6</a> |
+        <a href="seven.html">Problem 7</a> |
+        <a href="eight.html">Problem 8</a> |
+        <a href="nine.html">Problem 9</a>
+    </nav> 
+    <br><br>
+    <h1>Problem 4</h1><br>
+    <div>
+        <p id="para">This is a paragraph</p>
+        <button id="boldd">Bold</button>
+        <button id="italic">Italic</button>
+        <button id="under">Underline</button>
+    </div>
+    <script>
+        let clk=0;
+        let btn1= document.getElementById("boldd");
+        let btn2= document.getElementById("italic");
+        let btn3= document.getElementById("under");
+        let p = document.getElementById("para");
+        btn1.addEventListener("click", function(){
+        if(clk==0){
+            p.classList.add("b");
+            clk=1;
+            }
+        else{
+            p.classList.remove("b");
+            clk=0;
+            }
+        })
+        btn2.addEventListener("click", function(){
+        if(clk==0){
+            p.classList.add("i");
+            clk=1;
+            }
+        else{
+            p.classList.remove("i");
+            clk=0;
+            }
+        })
+        btn3.addEventListener("click", function(){
+        if(clk==0){
+            p.classList.add("u");
+            clk=1;
+            }
+        else{
+            p.classList.remove("u");
+            clk=0;
+            }
+        })
+
+    </script>
+</body>
+</html>

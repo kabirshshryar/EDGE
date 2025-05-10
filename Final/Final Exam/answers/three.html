@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .invalid-input {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="one.html">Problem 1</a> |
+        <a href="two.html">Problem 2</a> |
+        <a href="three.html">Problem 3</a> |
+        <a href="four.html">Problem 4</a> |
+        <a href="five.html">Problem 5</a> |
+        <a href="six.html">Problem 6</a> |
+        <a href="seven.html">Problem 7</a> |
+        <a href="eight.html">Problem 8</a> |
+        <a href="nine.html">Problem 9</a>
+    </nav> 
+    <br><br>
+    <h1>Problem 3</h1><br>
+    <div>
+        <form id="formsubmit">
+            Enter your age
+            <input type="text" id="inputage"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+<script>
+        let formsubmit =document.getElementById("formsubmit");
+
+        let input = document.getElementById("inputage");
+        
+        formsubmit.addEventListener("submit", function(){
+            let age = parseInt(input.value);
+            if (age<=100) {
+            alert(`You are ${age} years old`);
+            } 
+            else {
+            alert("Invalid Input");
+            input.classList.add("invalid-input");
+        }
+        })
+        
+
+</script>
+</html>
